@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block title %}Search results{% endblock %}
+
+{% block content %}
+<div class="container results-page">
+  <div class="row">
+    <nav>
+      <ul class="pager">
+        <li class="previous"><a href="/"><span aria-hidden="true">&larr;</span> New search</a></li>
+      </ul>
+    </nav>
+    <hr>
+    
+  </div><!-- /.row -->
+  <div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Departure Country</th>
+            <th>Departure City</th>
+            <th>Arrival Country</th>
+            <th>Arrival City</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in results %}
+          <tr>
+            <td>{{row.dept_country}}</td>
+            <td>{{row.dept_city}}</td>
+            <td>{{row.arr_country}}</td>
+            <td>{{row.arr_city}}</td>
+            <td>{{row.text}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+  
+</script>
+{% endblock %}

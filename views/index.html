@@ -1,11 +1,36 @@
 {% extends 'layout.html' %}
 
-{% block title %}Setup PLC environment{% endblock %}
+{% block title %}Landing{% endblock %}
 
 {% block content %}
-<div class="header">
-  <h1>Test</h1>
-</div> 
+<div class="container">
+  <div class="row">
+    <form action="/results" method="get">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="col-lg-offset-2 col-lg-4">
+            <div class="input-group">
+              <span class="input-group-addon" id="departure">
+                <strong>Departure</strong>
+              </span>
+              <input type="text" class="form-control" placeholder="Search for..." aria-describedby="departure" name="departure">
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+          <div class="col-lg-4">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for..." aria-describedby="arrival" name="arrival">
+              <span class="input-group-addon" id="arrival">
+                <strong>Arrival</strong>
+              </span>
+            </div><!-- /input-group -->
+          </div><!-- /.col-lg-6 -->
+          <button type="submit" class="btn glyphicon glyphicon-search" aria-hidden="true"></button>
+        </div>
+      </div>
+    </form>
+    
+  </div><!-- /.row -->
+</div>
 {% endblock %}
 
 {% block script %}
